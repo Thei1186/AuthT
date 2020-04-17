@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 *ngIf="user | async">Hello {{ (user | async)?.email }}</h1>
+      <div *ngIf="!(user | async)">
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="text" class="form-control" [(ngModel)]="email" placeholder="email" id="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" [(ngModel)]="password" id="pwd" placeholder="password">
+        </div>
+        <button mat-raised-button (click)="signIn()" class="btn btn-default" style="margin-left:5px;">Login</button>
+        <button mat-raised-button (click)="createUser()">Create User</button>
+      </div>
+    </div>
+  </div>
+</div>

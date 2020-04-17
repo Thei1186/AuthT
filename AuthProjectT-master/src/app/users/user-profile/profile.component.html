@@ -1,0 +1,29 @@
+<div *ngIf="user | async; then authenticated else loading">
+  <!-- template will replace this div -->
+</div>
+
+<ng-template #loading>
+    <h3> Hi there!</h3>
+    <h3> Your data is currently being fetched, if you are not logged in, then please do so.</h3>
+    <button (click)="rerouteToLogin()">Login</button>
+</ng-template>
+
+<ng-template #authenticated >
+<div *ngIf="user | async as user" >
+  <h3> Hi there {{user.name}}</h3>
+  <label class="type-text"> Display name: </label>
+  <label>{{user.displayName}}</label>
+  <br style="margin: 10px">
+  <label class="type-text"> Email: </label>
+  <label>{{user.email}}</label>
+  <br>
+  <button style="margin-bottom: 10px; margin-top: 10px" (click)="updateProfile()" mat-raised-button color="accent">Update profile</button>
+  <br>
+  <label style="margin-right: 10px; font-weight: bold "> Password:
+    <input style="margin-bottom: 10px" [(ngModel)]="newPassword">
+  </label>
+  <br>
+  <button (click)="updatePassword()" mat-raised-button color="accent">Update password</button>
+
+</div>
+</ng-template>

@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Email
+      <input matInput placeholder="Write your email" formControlName="email">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password
+      <input matInput placeholder="Write your password" formControlName="password">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Display Name
+      <input matInput placeholder="Write your display name" formControlName="displayName">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Photo
+      <input matInput placeholder="Out of order" formControlName="photoUrl">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Name
+      <input matInput placeholder="Write your name" formControlName="name">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button type="submit">Submit</button>
+</form>

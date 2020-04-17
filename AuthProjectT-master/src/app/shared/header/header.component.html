@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar color="accent">
+    <button mat-raised-button color="primary" routerLink="home">Home</button>
+    <div *ngIf="!(user | async)">
+      <button mat-raised-button color="primary" routerLink="users/login">Login</button>
+    </div>
+    <div *ngIf="user | async">
+      <button mat-raised-button color="primary" routerLink="users/profile">Profile</button>
+      <button mat-raised-button color="primary" routerLink="products">Products</button>
+      <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+    </div>
+    <div *ngIf="(user | async)">
+      <button mat-raised-button color="primary" routerLink="users/user-list">Users</button>
+    </div>
+  </mat-toolbar>
+</div>
+

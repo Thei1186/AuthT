@@ -1,0 +1,15 @@
+<div *ngFor="let product of products$ | async">
+  <mat-card>
+
+
+  <label class="type-text">Name: </label>
+  <label>{{product.name | titlecase}}</label>
+  <br>
+  <label class="type-text">Price: </label>
+  <label>{{product.price | currency:'DKK'}}</label>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="update/{{product.uId}}">Update</button>
+      <button mat-raised-button color="primary" (click)="deleteProduct(product.uId)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

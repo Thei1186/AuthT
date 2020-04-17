@@ -1,0 +1,21 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Name
+      <input matInput placeholder="Write the product name" formControlName="name">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Price
+      <input type="number" matInput placeholder="Write the product's price" formControlName="price">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Stock
+      <input type="number" matInput placeholder="Write the amount of products" formControlName="stock">
+    </mat-label>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button type="submit">Submit</button>
+</form>
