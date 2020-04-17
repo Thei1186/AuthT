@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1586083257060" clover="3.2.0">
+  <project timestamp="1586083257060" name="All files">
+    <metrics statements="42" coveredstatements="42" conditionals="10" coveredconditionals="8" methods="20" coveredmethods="20" elements="72" coveredelements="70" complexity="0" loc="42" ncloc="42" packages="4" files="5" classes="5"/>
+    <package name="src.orders">
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="order.service.ts" path="D:\Users\Kokushi\WebstormProjects\Functions-AuthProjectT\functions\src\orders\order.service.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.products">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="product.functions.service.ts" path="D:\Users\Kokushi\WebstormProjects\Functions-AuthProjectT\functions\src\products\product.functions.service.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.users">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="user.functions.service.ts" path="D:\Users\Kokushi\WebstormProjects\Functions-AuthProjectT\functions\src\users\user.functions.service.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="test.helpers">
+      <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="13"/>
+      <file name="data.helper.ts" path="D:\Users\Kokushi\WebstormProjects\Functions-AuthProjectT\functions\test\helpers\data.helper.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="24" count="9" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="47" count="9" type="stmt"/>
+      </file>
+      <file name="repository.helper.ts" path="D:\Users\Kokushi\WebstormProjects\Functions-AuthProjectT\functions\test\helpers\repository.helper.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
