@@ -28,12 +28,9 @@ export class ProductService {
   }
 
   createProduct(product: Product) {
-    return of(this.afs.collection<Product>('products').doc().set(product).then( () => {
-      console.log('Successfully created product ' + product.name);
-      this.router.navigateByUrl('products');
-    }).catch(e => {
-      console.log('Something went wrong' + e);
-    }));
+    return new Promise<Product>((resolve, reject) => {
+      this.afs.collection('products').add(product).then(res => {}, err => reject(err));
+    });
   }
 
   updateProduct(product: Product) {
@@ -42,13 +39,15 @@ export class ProductService {
       price: product.price,
       stock: product.stock
     };
-    return this.afs.collection<Product>('products')
-      .doc(product.uId).set(data).then(() => {
+    return new Promise<Product>(() => {
+      this.afs.collection<Product>('products')
+        .doc(product.uId).set(data).then(() => {
         console.log('Update successful');
         this.router.navigateByUrl('products');
       }).catch(e => {
         console.log( 'Update failed, error: ' + e);
       });
+    });
   }
 
   getProducts() {
@@ -87,11 +86,13 @@ export class ProductService {
   }
 
   deleteProduct(uid: string) {
-    this.afs.collection('products').doc(uid).delete().then(() => {
-      console.log('The product with id: ' + uid + ' was successfully deleted');
-    }).catch(e => {
-      console.log('Failed to delete the product with id: ' + uid);
-      console.log('Received error: ' + e);
+    return new Promise<Product>(() => {
+      this.afs.collection('products').doc(uid).delete().then(() => {
+        console.log('The product with id: ' + uid + ' was successfully deleted');
+      }).catch(e => {
+        console.log('Failed to delete the product with id: ' + uid);
+        console.log('Received error: ' + e);
+      });
     });
   }
 }

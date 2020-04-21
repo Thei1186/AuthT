@@ -3,6 +3,10 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {ProductService} from '../shared/product.service';
 import {Product} from '../shared/product';
 import {ActivatedRoute} from '@angular/router';
+import {Select, Store} from '@ngxs/store';
+import {GetProduct, UpdateProduct} from '../shared/product.action';
+import {Observable} from 'rxjs';
+import {ProductState} from '../shared/product.state';
 
 @Component({
   selector: 'app-update-product',
@@ -12,9 +16,11 @@ import {ActivatedRoute} from '@angular/router';
 export class UpdateProductComponent implements OnInit {
   productForm: FormGroup;
   id: string;
+  @Select(ProductState.chosenProduct) chosenProduct: Observable<Product>;
   constructor(private formBuilder: FormBuilder,
               private pService: ProductService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private store: Store) {
     this.productForm = this.formBuilder.group({
       name: '',
       price: 0,
@@ -24,13 +30,14 @@ export class UpdateProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.pService.getProduct(this.id).subscribe(product => {
+    this.store.dispatch(new GetProduct(this.id));
+    this.chosenProduct.subscribe(product => {
       this.productForm.patchValue({
         name: product.name,
         price: product.price,
         stock: product.stock
       });
-    } );
+    });
   }
 
   onSubmit() {
@@ -41,6 +48,7 @@ export class UpdateProductComponent implements OnInit {
       stock: productFromForm.stock,
       price: productFromForm.price
     };
-    this.pService.updateProduct(product as Product);
+    this.store.dispatch(new UpdateProduct(product as Product));
+    // this.pService.updateProduct(product as Product);
   }
 }
