@@ -18,7 +18,6 @@ export class UpdateProductComponent implements OnInit {
   id: string;
   @Select(ProductState.chosenProduct) chosenProduct: Observable<Product>;
   constructor(private formBuilder: FormBuilder,
-              private pService: ProductService,
               private route: ActivatedRoute,
               private store: Store) {
     this.productForm = this.formBuilder.group({
@@ -49,6 +48,5 @@ export class UpdateProductComponent implements OnInit {
       price: productFromForm.price
     };
     this.store.dispatch(new UpdateProduct(product as Product));
-    // this.pService.updateProduct(product as Product);
   }
 }
