@@ -41,12 +41,12 @@ export class UpdateProductComponent implements OnInit {
 
   onSubmit() {
     const productFromForm = this.productForm.value;
-    const product = {
+    const product: Product = {
       uId: this.id,
       name: productFromForm.name,
       stock: productFromForm.stock,
       price: productFromForm.price
     };
-    this.store.dispatch(new UpdateProduct(product as Product));
+    this.store.dispatch(new UpdateProduct(product));
   }
 }

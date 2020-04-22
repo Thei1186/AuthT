@@ -50,7 +50,7 @@ export class ProductService {
     });
   }
 
-  getProducts() {
+  getProducts(): Observable<Product[]> {
     return this.afs.collection<Product>('products')
       .snapshotChanges().pipe(
         map( docStuff => {
@@ -69,7 +69,7 @@ export class ProductService {
       );
   }
 
-  getProduct(productId: string) {
+  getProduct(productId: string): Observable<Product> {
     return this.afs.collection('products').doc<Product>(productId)
       .snapshotChanges()
       .pipe(
