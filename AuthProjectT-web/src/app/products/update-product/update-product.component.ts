@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {ProductService} from '../shared/product.service';
 import {Product} from '../shared/product';
 import {ActivatedRoute} from '@angular/router';
 import {Select, Store} from '@ngxs/store';
@@ -17,6 +16,7 @@ export class UpdateProductComponent implements OnInit {
   productForm: FormGroup;
   id: string;
   @Select(ProductState.chosenProduct) chosenProduct: Observable<Product>;
+
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private store: Store) {
@@ -31,6 +31,9 @@ export class UpdateProductComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.store.dispatch(new GetProduct(this.id));
     this.chosenProduct.subscribe(product => {
+      if (!product) {
+        return;
+      }
       this.productForm.patchValue({
         name: product.name,
         price: product.price,
